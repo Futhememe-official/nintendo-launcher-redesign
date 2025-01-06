@@ -10,7 +10,15 @@ import {
   WifiZero
 } from 'lucide-react'
 
-import { batteryRow, headerStyle, systemIcons, wifiIcon, wifiOff } from './styles'
+import {
+  Avatar,
+  AvatarFallback,
+  batteryRow,
+  headerStyle,
+  systemIcons,
+  wifiIcon,
+  wifiOff
+} from './styles'
 import { useNetwork } from './hooks/useNetwork'
 import { useEffect, useMemo, useState } from 'react'
 import { format } from 'date-fns'
@@ -62,7 +70,11 @@ export const Header = (): JSX.Element => {
 
   return (
     <header className={headerStyle}>
-      <div>primeiro</div>
+      <div>
+        <Avatar>
+          <AvatarFallback>GS</AvatarFallback>
+        </Avatar>
+      </div>
       <div className={systemIcons}>
         <p>{format(actualDate, 'HH:mm')}</p>
         {wifiIcons[network]}
