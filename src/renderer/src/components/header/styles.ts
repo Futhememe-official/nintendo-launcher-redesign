@@ -21,6 +21,11 @@ export const wifiIcon = css({
   mt: '-8px'
 })
 
+export const wifiOff = css({
+  display: 'flex',
+  mt: '-2px'
+})
+
 export const batteryRow = css({
   display: 'flex',
   alignItems: 'center',
