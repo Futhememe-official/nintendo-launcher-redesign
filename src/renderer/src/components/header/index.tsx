@@ -31,15 +31,19 @@ function getSnapshot(): NetworkType {
 export const Header = (): JSX.Element => {
   const network = useSyncExternalStore(subscribe, getSnapshot)
 
+  const wifiIcons = {
+    '4g': <WifiHigh className={wifiIcon} />,
+    '3g': <WifiLow className={wifiIcon} />,
+    '2g': <WifiZero className={wifiIcon} />,
+    offline: <WifiOff className={wifiOff} size={16} />
+  }
+
   return (
     <header className={headerStyle}>
       <div>primeiro</div>
       <div className={systemIcons}>
         <p>12:34</p>
-        {network === '4g' && <WifiHigh className={wifiIcon} />}
-        {network === '3g' && <WifiLow className={wifiIcon} />}
-        {network === '2g' && <WifiZero className={wifiIcon} />}
-        {network === 'offline' && <WifiOff className={wifiOff} size={16} />}
+        {wifiIcons[network]}
         <div className={batteryRow}>
           <p>34%</p>
           <Battery />
