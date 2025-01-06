@@ -13,11 +13,13 @@ import {
 import { batteryRow, headerStyle, systemIcons, wifiIcon, wifiOff } from './styles'
 import { useNetwork } from './hooks/useNetwork'
 import { useEffect, useMemo, useState } from 'react'
+import { format } from 'date-fns'
 
 export const Header = (): JSX.Element => {
   const network = useNetwork()
   const [battery, setBattery] = useState<number>(0)
   const [isCharging, setIsCharging] = useState<boolean>(false)
+  const [actualDate, setActualDate] = useState<Date>(new Date())
 
   const wifiIcons = {
     '4g': <WifiHigh className={wifiIcon} />,
@@ -40,6 +42,14 @@ export const Header = (): JSX.Element => {
         setBattery(battery.level)
       })
     })
+
+    const interval = setInterval(() => {
+      setActualDate(new Date())
+    }, 50 * 1000)
+
+    return (): void => {
+      clearInterval(interval)
+    }
   }, [])
 
   const batteryLevel = useMemo(() => {
@@ -54,7 +64,7 @@ export const Header = (): JSX.Element => {
     <header className={headerStyle}>
       <div>primeiro</div>
       <div className={systemIcons}>
-        <p>12:34</p>
+        <p>{format(actualDate, 'HH:mm')}</p>
         {wifiIcons[network]}
         <div className={batteryRow}>
           <p>{batteryLevel}%</p>
