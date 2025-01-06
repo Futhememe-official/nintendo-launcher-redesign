@@ -12,8 +12,8 @@ function subscribe(callback: () => void) {
   return (): void => {
     // @ts-ignore connection exists
     navigator?.connection?.removeEventListener('change', callback)
-    window.addEventListener('online', callback)
-    window.addEventListener('offline', callback)
+    window.removeEventListener('online', callback)
+    window.removeEventListener('offline', callback)
   }
 }
 
