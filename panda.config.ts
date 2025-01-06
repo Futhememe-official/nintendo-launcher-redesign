@@ -47,7 +47,8 @@ export default defineConfig({
           hud: { value: '{colors.grey.100}' },
           battery: { value: '{colors.green.300}' },
           nintendo: { value: '{colors.red.200}' },
-          notification: { value: '{colors.green.100}' }
+          notification: { value: '{colors.green.100}' },
+          text: { value: '{colors.grey.100}' }
         }
       }
     }
