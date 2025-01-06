@@ -1,3 +1,4 @@
+import { CarrouselSection } from './components/carrousel-section'
 import { Header } from './components/header'
 import { Main } from './components/layout/main'
 import { css } from '@/styled-system/css'
@@ -16,7 +17,7 @@ function App(): JSX.Element {
         })}
       />
       <Header />
-      <section></section>
+      <CarrouselSection />
     </Main>
   )
 }
