@@ -9,6 +9,9 @@ const contaienr = css({
   borderRadius: '4px',
   transition: '0.1s',
   position: 'relative',
+  // boxShadow:
+  //   "0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075)' ",
+  boxShadow: '0 6px 6px hsl(0deg 0% 0% / 0.3)',
 
   cursor: 'pointer',
 
@@ -57,13 +60,15 @@ const subtitle = css({
 })
 
 const image = css({
-  width: 'calc(300px - 12px)',
-  h: 'calc(300px - 12px)',
+  width: '300px',
+  h: '300px',
   borderRadius: '4px',
   objectFit: 'cover',
 
   _hover: {
-    borderRadius: '0'
+    borderRadius: '0',
+    width: 'calc(300px - 12px)',
+    h: 'calc(300px - 12px)'
   }
 })
 
