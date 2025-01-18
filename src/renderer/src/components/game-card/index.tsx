@@ -3,6 +3,7 @@ import { css } from '@/styled-system/css'
 const contaienr = css({
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   h: '300px',
   w: '300px',
   borderRadius: '4px',
@@ -55,14 +56,26 @@ const subtitle = css({
   left: '36%'
 })
 
+const image = css({
+  width: 'calc(300px - 12px)',
+  h: 'calc(300px - 12px)',
+  borderRadius: '4px',
+  objectFit: 'cover',
+
+  _hover: {
+    borderRadius: '0'
+  }
+})
+
 interface IGameCard {
   title: string
   img?: string
 }
 
-export const GameCard = ({ title }: IGameCard): JSX.Element => {
+export const GameCard = ({ title, img }: IGameCard): JSX.Element => {
   return (
     <div className={contaienr}>
+      {img && <img src={img} className={image} />}
       <p className={gameTitle}>{title}</p>
       <p className={subtitle}>Clique aqui</p>
     </div>
