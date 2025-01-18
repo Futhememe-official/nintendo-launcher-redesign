@@ -6,6 +6,7 @@ export const Main = styled('main', {
     flexDir: 'column',
     minHeight: '100vh',
     maxHeight: '100vh',
+    maxWidth: '100vw',
     backgroundColor: 'background',
     position: 'relative',
     padding: '36px 16px 16px 16px',

@@ -121,7 +121,7 @@ const Carousel = React.forwardRef<
       <div
         ref={ref}
         onKeyDownCapture={handleKeyDown}
-        className={css({ position: 'relative', w: 'full' })}
+        className={css({ position: 'relative', w: 'full', maxW: '100vw' })}
         role="region"
         aria-roledescription="carousel"
         {...props}
@@ -139,7 +139,7 @@ const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
 
     return (
       <div ref={carouselRef} className="overflow-hidden">
-        <styled.div ref={ref} display={'flex'} ml="16px" {...props} />
+        <styled.div ref={ref} gap={'16px'} display={'flex'} ml="16px" {...props} />
       </div>
     )
   }
@@ -159,7 +159,6 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
           minW: 0,
           flexShrink: 0,
           flexGrow: 0,
-          flexBasis: '100%',
           pl: '16px'
         })}
         {...props}
