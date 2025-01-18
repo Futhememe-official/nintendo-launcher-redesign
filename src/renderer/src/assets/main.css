@@ -1,1 +1,9 @@
 @layer reset, base, tokens, recipes, utilities;
+
+.region-drag {
+  -webkit-app-region: drag
+}
+
+.region-no-drag {
+  -webkit-app-region: no-drag
+}
