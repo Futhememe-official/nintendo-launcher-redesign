@@ -5,16 +5,16 @@ import { sectionStyle } from './styles'
 export const CarrouselSection = (): JSX.Element => {
   return (
     <section className={sectionStyle}>
-      <Carousel>
+      <Carousel opts={{ dragFree: true }}>
         <CarouselContent>
           <CarouselItem>
-            <GameCard />
+            <GameCard title="Mario Kart 8 Deluxe" />
           </CarouselItem>
           <CarouselItem>
-            <GameCard />
+            <GameCard title="Zelda Breath of the wild" />
           </CarouselItem>
           <CarouselItem>
-            <GameCard />
+            <GameCard title="Animal Crossing" />
           </CarouselItem>
         </CarouselContent>
       </Carousel>
